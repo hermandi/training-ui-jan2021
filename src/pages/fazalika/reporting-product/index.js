@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DashboardAlpha = () => {
+const ReportingProduct = () => {
   return (
     <div>
       <div className="cui__utils__heading">
@@ -13,4 +13,4 @@ const DashboardAlpha = () => {
   )
 }
 
-export default DashboardAlpha
+export default ReportingProduct
