@@ -13,6 +13,12 @@ const routes = [
     Component: lazy(() => import('pages/dashboard/alpha')),
     exact: true,
   },
+  // Gadai
+  {
+    path: '/gadai/data',
+    Component: lazy(() => import('pages/gadai/new-gadai')),
+    exact: true,
+  },
   // Auth Pages
   {
     path: '/auth/login',
