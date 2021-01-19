@@ -30,6 +30,17 @@ const routes = [
     Component: lazy(() => import('pages/report/report-gadai')),
     exact: true,
   },
+  // Adit
+  {
+    path: '/adit/data-produk',
+    Component: lazy(() => import('pages/adit/data-produk')),
+    exact: true,
+  },
+  {
+    path: '/adit/reporting-produk',
+    Component: lazy(() => import('pages/adit/reporting-produk')),
+    exact: true,
+  },
   // Auth Pages
   {
     path: '/auth/login',
