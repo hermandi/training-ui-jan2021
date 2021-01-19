@@ -19,6 +19,17 @@ const routes = [
     Component: lazy(() => import('pages/gadai/new-gadai')),
     exact: true,
   },
+  // Report
+  {
+    path: '/report/user',
+    Component: lazy(() => import('pages/report/report-user')),
+    exact: true,
+  },
+  {
+    path: '/report/gadai',
+    Component: lazy(() => import('pages/report/report-gadai')),
+    exact: true,
+  },
   // Auth Pages
   {
     path: '/auth/login',
