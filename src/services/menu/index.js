@@ -41,5 +41,21 @@ export default async function getMenuData() {
         },
       ],
     },
+    {
+      title: 'Report',
+      key: 'report',
+      children: [
+        {
+          title: 'Report User',
+          key: 'reportUser',
+          url: '/report/user',
+        },
+        {
+          title: 'Report Gadai',
+          key: 'reportGadai',
+          url: '/report/gadai',
+        },
+      ],
+    },
   ]
 }
