@@ -36,5 +36,22 @@ export default async function getMenuData() {
       icon: 'fe fe-gear',
       url: '/setting',
     },
+    {
+      title: 'Produk Reya',
+      key: 'produkReya',
+      icon: 'fe fe-gear',
+      children: [
+        {
+          title: 'Input Produk',
+          key: 'inputProduk',
+          url: '/reya/inputProduk',
+        },
+        {
+          title: 'Reporting Produk',
+          key: 'reportingProduk',
+          url: '/reya/reportingProduk',
+        },
+      ],
+    },
   ]
 }

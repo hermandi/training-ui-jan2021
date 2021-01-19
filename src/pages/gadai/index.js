@@ -7,7 +7,7 @@ const DashboardAlpha = () => {
     <div>
       <Helmet title="Dashboard: Analytics" />
       <div className="cui__utils__heading">
-        <strong>DASHBOARD GADAI</strong>
+        <strong>DASHBOARD GADAI - 2</strong>
         <h1> Data Gadai </h1>
         <hr />
         <table width="50%">
