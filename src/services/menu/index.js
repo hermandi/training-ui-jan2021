@@ -18,5 +18,23 @@ export default async function getMenuData() {
         },
       ],
     },
+    {
+      title: 'Gadai',
+      key: 'gadai',
+      icon: 'fe fe-gear',
+      children: [
+        {
+          title: 'Data Gadai',
+          key: 'dataGadai',
+          url: '/gadai/data',
+        },
+      ],
+    },
+    {
+      title: 'Setting',
+      key: 'setting',
+      icon: 'fe fe-gear',
+      url: '/setting',
+    },
   ]
 }
