@@ -16,6 +16,29 @@ export default async function getMenuData() {
           key: 'dataProduct',
           url: '/data-product',
         },
+        {
+          title: 'Edit Product',
+          key: 'editProduct',
+          url: '/edit-product',
+        },
+      ],
+    },
+    {
+      title: 'Setting',
+      key: 'setting',
+      icon: 'fe fe-gear',
+      url: '/setting',
+    },
+    {
+      title: 'Gadai',
+      key: 'gadai',
+      icon: 'fe fe-home',
+      children: [
+        {
+          title: 'Data Gadai',
+          key: 'dataGadai',
+          url: '/gadai/data',
+        },
       ],
     },
   ]
