@@ -5,9 +5,9 @@ const DataGadai = () => {
     <div>
       <div className="cui__utils__heading">
         <p>
-          <strong>DATA GADAI</strong>
+          <strong>DATA GADAI DARI BELAJAR</strong>
         </p>
-        <strong>DATA GADAI</strong>
+        <strong>DATA BARU</strong>
       </div>
     </div>
   )
