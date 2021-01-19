@@ -7,7 +7,7 @@ const DataGadai = () => {
         <p>
           <strong>DATA GADAI DARI BELAJAR</strong>
         </p>
-        <strong>DATA GADAI</strong>
+        <strong>DATA BARU</strong>
       </div>
     </div>
   )
