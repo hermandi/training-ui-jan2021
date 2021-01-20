@@ -41,7 +41,7 @@ const InputProduct = () => {
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>
-                <button type="submit">Simpan</button>
+                <button type="submit">Simpan Data</button>
               </td>
             </tr>
           </table>
