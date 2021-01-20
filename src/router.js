@@ -14,6 +14,19 @@ const routes = [
     exact: true,
   },
 
+  // Produk Reya
+  {
+    path: '/reya/inputProduk',
+    Component: lazy(() => import('pages/reya/input-produk')),
+    exact: true,
+  },
+
+  {
+    path: '/reya/reportingProduk',
+    Component: lazy(() => import('pages/reya/reporting-produk')),
+    exact: true,
+  },
+
   // Input Product
   {
     path: '/input-product-faza',
@@ -56,6 +69,7 @@ const routes = [
     Component: lazy(() => import('pages/adit/reporting-produk')),
     exact: true,
   },
+  
   // Auth Pages
   {
     path: '/auth/login',

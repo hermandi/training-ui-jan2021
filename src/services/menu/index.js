@@ -19,6 +19,19 @@ export default async function getMenuData() {
       ],
     },
     {
+      title: 'Gadai',
+      key: 'gadai',
+      icon: 'fe fe-gear',
+      children: [
+        {
+          title: 'Data Gadai',
+          key: 'dataGadai',
+          url: '/gadai/data',
+
+        },
+      ],
+    },
+    {
       title: 'Data Product Faza',
       key: 'dataProductFaza',
       children: [
@@ -31,22 +44,37 @@ export default async function getMenuData() {
           title: 'Reporting Product',
           key: 'reportingProduct',
           url: '/reporting-product-faza',
-        },
-      ],
+      ]
     },
     {
       title: 'Data Produk Adit',
       key: 'dataProdukAdit',
       children: [
         {
-          title: 'Input Produk',
-          key: 'inputProduk',
+          title: 'Input Product',
+          key: 'inputProduct',
           url: '/adit/data-produk',
         },
         {
           title: 'Reporting Produk',
           key: 'reportingProduk',
           url: '/adit/reporting-produk',
+      ]
+    },
+    {
+      title: 'Produk Reya',
+      key: 'produkReya',
+      icon: 'fe fe-gear',
+      children: [
+        {
+          title: 'Input Produk',
+          key: 'inputProduk',
+          url: '/reya/inputProduk',
+        },
+        {
+          title: 'Reporting Produk',
+          key: 'reportingProduk',
+          url: '/reya/reportingProduk',
         },
       ],
     },
