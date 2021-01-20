@@ -34,6 +34,22 @@ export default async function getMenuData() {
         },
       ],
     },
+    {
+      title: 'Data Produk Adit',
+      key: 'dataProdukAdit',
+      children: [
+        {
+          title: 'Input Produk',
+          key: 'inputProduk',
+          url: '/adit/data-produk',
+        },
+        {
+          title: 'Reporting Produk',
+          key: 'reportingProduk',
+          url: '/adit/reporting-produk',
+        },
+      ],
+    },
   ]
 }
 
