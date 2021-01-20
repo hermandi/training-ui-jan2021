@@ -16,23 +16,12 @@ export default async function getMenuData() {
           key: 'dataProduct',
           url: '/data-product',
         },
-        {
-          title: 'Edit Product',
-          key: 'editProduct',
-          url: '/edit-product',
-        },
       ],
-    },
-    {
-      title: 'Setting',
-      key: 'setting',
-      icon: 'fe fe-gear',
-      url: '/setting',
     },
     {
       title: 'Gadai',
       key: 'gadai',
-      icon: 'fe fe-home',
+      icon: 'fe fe-gear',
       children: [
         {
           title: 'Data Gadai',
@@ -42,20 +31,55 @@ export default async function getMenuData() {
       ],
     },
     {
-      title: 'Report',
-      key: 'report',
+      title: 'Data Product Faza',
+      key: 'dataProductFaza',
       children: [
         {
-          title: 'Report User',
-          key: 'reportUser',
-          url: '/report/user',
+          title: 'Input Product',
+          key: 'inputProduct',
+          url: '/input-product-faza',
         },
         {
-          title: 'Report Gadai',
-          key: 'reportGadai',
-          url: '/report/gadai',
+          title: 'Reporting Product',
+          key: 'reportingProduct',
+          url: '/reporting-product-faza',
+        },
+      ],
+    },
+    {
+      title: 'Data Produk Adit',
+      key: 'dataProdukAdit',
+      children: [
+        {
+          title: 'Input Product',
+          key: 'inputProduct',
+          url: '/adit/data-produk',
+        },
+        {
+          title: 'Reporting Produk',
+          key: 'reportingProduk',
+          url: '/adit/reporting-produk',
+        },
+      ],
+    },
+    {
+      title: 'Produk Reya',
+      key: 'produkReya',
+      icon: 'fe fe-gear',
+      children: [
+        {
+          title: 'Input Produk',
+          key: 'inputProduk',
+          url: '/reya/inputProduk',
+        },
+        {
+          title: 'Reporting Produk',
+          key: 'reportingProduk',
+          url: '/reya/reportingProduk',
         },
       ],
     },
   ]
 }
+
+// git log --graph --oneline --decorate --all
