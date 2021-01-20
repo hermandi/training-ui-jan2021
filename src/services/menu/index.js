@@ -7,30 +7,6 @@ export default async function getMenuData() {
       url: '/dashboard',
     },
     {
-      title: 'Product',
-      key: 'product',
-      icon: 'fe fe-gear',
-      children: [
-        {
-          title: 'Data Product',
-          key: 'dataProduct',
-          url: '/data-product',
-        },
-      ],
-    },
-    {
-      title: 'Gadai',
-      key: 'gadai',
-      icon: 'fe fe-gear',
-      children: [
-        {
-          title: 'Data Gadai',
-          key: 'dataGadai',
-          url: '/gadai/data',
-        },
-      ],
-    },
-    {
       title: 'Data Product Faza',
       key: 'dataProductFaza',
       children: [
@@ -68,14 +44,29 @@ export default async function getMenuData() {
       icon: 'fe fe-gear',
       children: [
         {
+          title: 'Home Produk',
+          key: 'homeProdukReya',
+          url: '/reya/home-produk',
+        },
+        {
+          title: 'Home Produk - TEST',
+          key: 'homeProdukTestReya',
+          url: '/reya/home-produk-test',
+        },
+        {
+          title: 'Customer',
+          key: 'customerReya',
+          url: '/reya/customer',
+        },
+        {
           title: 'Input Produk',
-          key: 'inputProduk',
-          url: '/reya/inputProduk',
+          key: 'inputProdukReya',
+          url: '/reya/input-produk',
         },
         {
           title: 'Reporting Produk',
-          key: 'reportingProduk',
-          url: '/reya/reportingProduk',
+          key: 'reportingProdukReya',
+          url: '/reya/reporting-produk',
         },
       ],
     },

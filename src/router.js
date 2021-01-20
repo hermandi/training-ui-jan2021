@@ -16,13 +16,37 @@ const routes = [
 
   // Produk Reya
   {
-    path: '/reya/inputProduk',
+    path: '/reya/home-produk',
+    Component: lazy(() => import('pages/reya/home-produk')),
+    exact: true,
+  },
+
+  {
+    path: '/reya/home-produk-test',
+    Component: lazy(() => import('pages/reya/home-produk-test')),
+    exact: true,
+  },
+
+  {
+    path: '/reya/customer',
+    Component: lazy(() => import('pages/reya/customer')),
+    exact: true,
+  },
+
+  {
+    path: '/reya/input-produk',
     Component: lazy(() => import('pages/reya/input-produk')),
     exact: true,
   },
 
   {
-    path: '/reya/reportingProduk',
+    path: '/reya/edit-produk/:produkId',
+    Component: lazy(() => import('pages/reya/edit-produk')),
+    exact: true,
+  },
+
+  {
+    path: '/reya/reporting-produk',
     Component: lazy(() => import('pages/reya/reporting-produk')),
     exact: true,
   },
@@ -69,7 +93,7 @@ const routes = [
     Component: lazy(() => import('pages/adit/reporting-produk')),
     exact: true,
   },
-  
+
   // Auth Pages
   {
     path: '/auth/login',
