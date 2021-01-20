@@ -27,14 +27,39 @@ export default async function getMenuData() {
           title: 'Data Gadai',
           key: 'dataGadai',
           url: '/gadai/data',
+
         },
       ],
     },
     {
-      title: 'Setting',
-      key: 'setting',
-      icon: 'fe fe-gear',
-      url: '/setting',
+      title: 'Data Product Faza',
+      key: 'dataProductFaza',
+      children: [
+        {
+          title: 'Input Product',
+          key: 'inputProduct',
+          url: '/input-product-faza',
+        },
+        {
+          title: 'Reporting Product',
+          key: 'reportingProduct',
+          url: '/reporting-product-faza',
+      ]
+    },
+    {
+      title: 'Data Produk Adit',
+      key: 'dataProdukAdit',
+      children: [
+        {
+          title: 'Input Product',
+          key: 'inputProduct',
+          url: '/adit/data-produk',
+        },
+        {
+          title: 'Reporting Produk',
+          key: 'reportingProduk',
+          url: '/adit/reporting-produk',
+      ]
     },
     {
       title: 'Produk Reya',
@@ -55,3 +80,5 @@ export default async function getMenuData() {
     },
   ]
 }
+
+// git log --graph --oneline --decorate --all

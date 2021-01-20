@@ -13,12 +13,6 @@ const routes = [
     Component: lazy(() => import('pages/dashboard/alpha')),
     exact: true,
   },
-  // Dashboards
-  {
-    path: '/gadai/data',
-    Component: lazy(() => import('pages/gadai')),
-    exact: true,
-  },
 
   // Produk Reya
   {
@@ -33,6 +27,49 @@ const routes = [
     exact: true,
   },
 
+  // Input Product
+  {
+    path: '/input-product-faza',
+    Component: lazy(() => import('pages/fazalika/input-product')),
+    exact: true,
+  },
+
+  // Reporting Product
+  {
+    path: '/reporting-product-faza',
+    Component: lazy(() => import('pages/fazalika/reporting-product')),
+    exact: true,
+  },
+
+  // Gadai
+  {
+    path: '/gadai/data',
+    Component: lazy(() => import('pages/gadai/new-gadai')),
+    exact: true,
+  },
+  // Report
+  {
+    path: '/report/user',
+    Component: lazy(() => import('pages/report/report-user')),
+    exact: true,
+  },
+  {
+    path: '/report/gadai',
+    Component: lazy(() => import('pages/report/report-gadai')),
+    exact: true,
+  },
+  // Adit
+  {
+    path: '/adit/data-produk',
+    Component: lazy(() => import('pages/adit/data-produk')),
+    exact: true,
+  },
+  {
+    path: '/adit/reporting-produk',
+    Component: lazy(() => import('pages/adit/reporting-produk')),
+    exact: true,
+  },
+  
   // Auth Pages
   {
     path: '/auth/login',
