@@ -27,7 +27,6 @@ export default async function getMenuData() {
           title: 'Data Gadai',
           key: 'dataGadai',
           url: '/gadai/data',
-
         },
       ],
     },
@@ -44,7 +43,8 @@ export default async function getMenuData() {
           title: 'Reporting Product',
           key: 'reportingProduct',
           url: '/reporting-product-faza',
-      ]
+        },
+      ],
     },
     {
       title: 'Data Produk Adit',
@@ -59,7 +59,8 @@ export default async function getMenuData() {
           title: 'Reporting Produk',
           key: 'reportingProduk',
           url: '/adit/reporting-produk',
-      ]
+        },
+      ],
     },
     {
       title: 'Produk Reya',
