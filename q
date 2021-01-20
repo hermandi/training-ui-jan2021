@@ -1,0 +1,43 @@
+*   [33maf3af24[m[33m ([m[1;31morigin/main[m[33m)[m Merge pull request #6 from hermandi/kadhana_branch
+[31m|[m[32m\[m  
+[31m|[m *   [33m538437b[m Merge branch 'main' into kadhana_branch
+[31m|[m [33m|[m[31m\[m  
+[31m|[m [33m|[m[31m/[m  
+[31m|[m[31m/[m[33m|[m   
+* [33m|[m   [33m14e8553[m Merge pull request #5 from hermandi/adit
+[35m|[m[36m\[m [33m\[m  
+[35m|[m * [33m|[m [33meebf249[m Data Produk Adit
+* [36m|[m [33m|[m   [33m3178e45[m Merge pull request #4 from hermandi/branch-faza
+[36m|[m[1;32m\[m [36m\[m [33m\[m  
+[36m|[m [1;32m|[m[36m/[m [33m/[m  
+[36m|[m[36m/[m[1;32m|[m [33m|[m   
+[36m|[m * [33m|[m [33m440b458[m Fixed kesalahan
+[36m|[m * [33m|[m [33mb8a811e[m Penambahan Data Produk Baru
+[36m|[m[36m/[m [33m/[m  
+[36m|[m * [33ma5889f1[m[33m ([m[1;31morigin/kadhana_branch[m[33m, [m[1;32mkadhana_branch[m[33m)[m Commit Produk Reya
+[36m|[m * [33m8e141a0[m Added Table Anggota
+[36m|[m [1;32m|[m * [33m7a50c4d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m fixing readme
+[36m|[m [1;32m|[m[36m/[m  
+[36m|[m[36m/[m[1;32m|[m   
+[36m|[m [1;32m|[m * [33m37af801[m[33m ([m[1;32mfitur-baru[m[33m)[m fitur baru
+[36m|[m [1;32m|[m * [33mf014193[m fitur pao
+[36m|[m [1;32m|[m[36m/[m  
+[36m|[m[36m/[m[1;32m|[m   
+* [1;32m|[m   [33m2ab1e97[m[33m ([m[1;31morigin/production_v1[m[33m)[m Merge pull request #3 from hermandi/reporting
+[1;35m|[m[1;36m\[m [1;32m\[m  
+[1;35m|[m * [1;32m|[m [33mc369872[m[33m ([m[1;31morigin/reporting[m[33m)[m Penambahan Fitur Reporting
+[1;35m|[m[1;35m/[m [1;32m/[m  
+* [1;32m|[m   [33m328b7e1[m Merge pull request #2 from hermandi/belajar
+[31m|[m[32m\[m [1;32m\[m  
+[31m|[m * [1;32m|[m [33m39945c0[m[33m ([m[1;31morigin/belajar[m[33m)[m penambahan data baru pada new gadai
+[31m|[m * [1;32m|[m [33m70a48ba[m penambahan fitur belajar
+* [32m|[m [1;32m|[m [33m57da006[m Merge pull request #1 from hermandi/pao
+[1;32m|[m[32m\[m[32m|[m [1;32m|[m 
+[1;32m|[m [32m|[m[1;32m/[m  
+[1;32m|[m[1;32m/[m[32m|[m   
+[1;32m|[m * [33mc84073d[m[33m ([m[1;31morigin/pao[m[33m)[m fitur user
+[1;32m|[m[1;32m/[m  
+*   [33m1065ce2[m Merge branch 'main' of https://github.com/hermandi/training-ui-jan2021 into main
+[35m|[m[36m\[m  
+[35m|[m * [33m20b49f2[m Create readme.md
+* [33m87b2283[m intial project
