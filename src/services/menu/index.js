@@ -16,46 +16,25 @@ export default async function getMenuData() {
           key: 'dataProduct',
           url: '/data-product',
         },
-        {
-          title: 'Edit Product',
-          key: 'editProduct',
-          url: '/edit-product',
-        },
       ],
     },
     {
-      title: 'Setting',
-      key: 'setting',
-      icon: 'fe fe-gear',
-      url: '/setting',
-    },
-    {
-      title: 'Gadai',
-      key: 'gadai',
-      icon: 'fe fe-home',
+      title: 'Data Product Faza',
+      key: 'dataProductFaza',
       children: [
         {
-          title: 'Data Gadai',
-          key: 'dataGadai',
-          url: '/gadai/data',
-        },
-      ],
-    },
-    {
-      title: 'Report',
-      key: 'report',
-      children: [
-        {
-          title: 'Report User',
-          key: 'reportUser',
-          url: '/report/user',
+          title: 'Input Product',
+          key: 'inputProduct',
+          url: '/input-product-faza',
         },
         {
-          title: 'Report Gadai',
-          key: 'reportGadai',
-          url: '/report/gadai',
+          title: 'Reporting Product',
+          key: 'reportingProduct',
+          url: '/reporting-product-faza',
         },
       ],
     },
   ]
 }
+
+// git log --graph --oneline --decorate --all

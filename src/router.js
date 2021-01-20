@@ -13,6 +13,21 @@ const routes = [
     Component: lazy(() => import('pages/dashboard/alpha')),
     exact: true,
   },
+
+  // Input Product
+  {
+    path: '/input-product-faza',
+    Component: lazy(() => import('pages/fazalika/input-product')),
+    exact: true,
+  },
+
+  // Reporting Product
+  {
+    path: '/reporting-product-faza',
+    Component: lazy(() => import('pages/fazalika/reporting-product')),
+    exact: true,
+  },
+
   // Gadai
   {
     path: '/gadai/data',
