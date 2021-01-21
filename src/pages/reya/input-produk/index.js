@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Form, Button, Card, Select } from 'antd'
+import { Input, Form, Button, Card, Select, notification } from 'antd'
 import * as kategori from 'services/kategori'
 import * as product from 'services/product'
 import { history } from 'index'
@@ -35,6 +35,15 @@ class InputProduk extends React.Component {
       if (data.response_code === '00') {
         const path = '/reya/home-produk'
         history.push(path)
+        notification.success({
+          message: 'Simpan Produk berhasil!',
+          description: 'Sudah berhasil meyimpan produk baru!',
+        })
+      } else {
+        notification.error({
+          message: 'Simpan Produk gagal!',
+          description: 'Gagal menyimpan produk baru!',
+        })
       }
     })
   }
@@ -46,6 +55,10 @@ class InputProduk extends React.Component {
 
   onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
+  }
+
+  routeBack = () => {
+    history.goBack()
   }
 
   render() {
@@ -87,6 +100,13 @@ class InputProduk extends React.Component {
             <div className="row">
               <div className="col-12">
                 <Form.Item>
+                  <Button
+                    type="primary"
+                    className="btn btn-light px-5 mr-2"
+                    onClick={this.routeBack}
+                  >
+                    Back
+                  </Button>
                   <Button
                     type="primary"
                     className="btn btn-light px-5 mr-2"
