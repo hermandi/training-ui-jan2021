@@ -33,3 +33,35 @@ export async function doSaveProduct(product) {
     })
     .catch(err => console.log(err))
 }
+
+export async function doGetProduct(product) {
+  return apiClientApp
+    .get('/product/get-product', {
+      params: { kode_product: product },
+    })
+    .then(response => {
+      if (response) {
+        return response.data
+      }
+      return false
+    })
+    .catch(err => console.log(err))
+}
+
+export async function doSaveEdit(product) {
+  return apiClientApp
+    .post('/product/edit', {
+      nama_product: product.nama_product,
+      kode_kategori: product.kode_kategori,
+      satuan: product.satuan,
+      harga: product.harga,
+      kode_product: product.kode_product,
+    })
+    .then(response => {
+      if (response) {
+        return response.data
+      }
+      return false
+    })
+    .catch(err => console.log(err))
+}

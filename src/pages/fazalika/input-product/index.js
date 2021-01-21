@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Form, Button, Card, Select } from 'antd'
+import { Input, Form, Button, Card, Select, notification } from 'antd'
 import * as kategori from 'services/kategori'
 import * as product from 'services/product'
 import { history } from 'index'
@@ -34,13 +34,22 @@ class NewProduct extends React.Component {
       this.setState({ loadingSave: false })
       if (data.response_code === '00') {
         history.goBack()
+        notification.success({
+          message: 'Success',
+          description: 'Successfully inserted a new data!',
+        })
+      } else {
+        notification.error({
+          message: 'Error',
+          description: 'Something went wrong',
+        })
       }
     })
   }
 
   onFinish = values => {
     console.log(values)
-    this.saveProduct(values)
+    // this.saveProduct(values)
   }
 
   onFinishFailed = errorInfo => {

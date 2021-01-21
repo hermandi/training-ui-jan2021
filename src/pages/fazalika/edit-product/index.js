@@ -8,29 +8,56 @@ const { Option } = Select
 
 class EditProduct extends React.Component {
   state = {
+    kodeProduct: '',
+    namaProduct: '',
+    kodeKategori: '',
+    harga: '',
+    satuan: '',
     data: [],
-    loading: true,
+    loadingCard: false,
     loadingSave: false,
   }
 
   componentDidMount() {
+    console.log(history)
+    this.setState(
+      {
+        loadingCard: true,
+        kodeProduct: history.location.state.data,
+      },
+      () => this.fetchProduct(),
+    )
     this.fetchKategori()
   }
 
   fetchKategori = () => {
-    this.setState({ loading: true })
+    this.setState({ loadingCard: true })
     kategori.doSearchAllKategori().then(data => {
       console.log(data)
       this.setState({
         data: data.data_kategori,
-        loading: false,
+        loadingCard: false,
       })
+    })
+  }
+
+  fetchProduct = () => {
+    const { kodeProduct } = this.state
+    product.doGetProduct(kodeProduct).then(data => {
+      if (data.response_code === '00') {
+        this.setState({
+          namaProduct: data.product.nama_product,
+          harga: data.product.harga,
+          satuan: data.product.satuan,
+          kodeKategori: data.product.kodeKategori,
+        })
+      }
     })
   }
 
   saveProduct = dataProduct => {
     this.setState({ loadingSave: true })
-    product.doSaveProduct(dataProduct).then(data => {
+    product.doSaveEdit(dataProduct).then(data => {
       console.log(data)
       this.setState({ loadingSave: false })
       if (data.response_code === '00') {
@@ -39,9 +66,15 @@ class EditProduct extends React.Component {
     })
   }
 
+  onChangeInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    })
+  }
+
   onFinish = values => {
     console.log(values)
-    this.saveProduct(values)
+    // this.saveProduct(values)
   }
 
   onFinishFailed = errorInfo => {
@@ -49,21 +82,29 @@ class EditProduct extends React.Component {
   }
 
   render() {
-    const dataEdit = JSON.parse(localStorage.getItem('dataRecord'))
-    const { data, loading, loadingSave } = this.state
+    const {
+      kodeProduct,
+      namaProduct,
+      kodeKategori,
+      harga,
+      satuan,
+      data,
+      loadingCard,
+      loadingSave,
+    } = this.state
     return (
       <div>
-        <Card title={<h2>Edit Data {dataEdit.kode_product}</h2>} size="small" loading={loading}>
+        <Card title={<h2>Edit Data {kodeProduct}</h2>} size="small" loading={loadingCard}>
           <Form layout="vertical" onFinish={this.onFinish} onFinishFailed={this.onFinishFailed}>
             <div className="row">
               <div className="col-md-6">
                 <Form.Item name="nama_product" label="Nama Product">
-                  <Input defaultValue={dataEdit.nama_product} />
+                  <Input value={namaProduct} onChange={e => this.onChangeInput(e)} />
                 </Form.Item>
               </div>
               <div className="col-md-6">
-                <Form.Item name="kode_kategori" label="Nama Kategori">
-                  <Select defaultValue={dataEdit.kode_kategori}>
+                <Form.Item name="nama_kategori" label="Nama Kategori">
+                  <Select value={kodeKategori} onChange={e => this.onChangeInput(e)}>
                     {data.map(k => (
                       <Option key={k.kode_kategori} value={k.kode_kategori}>
                         {k.kategori}
@@ -75,13 +116,13 @@ class EditProduct extends React.Component {
             </div>
             <div className="row">
               <div className="col-md-6">
-                <Form.Item name="harga" label="Harga">
-                  <Input defaultValue={dataEdit.harga} />
+                <Form.Item label="Harga">
+                  <Input value={harga} onChange={e => this.onChangeInput(e)} />
                 </Form.Item>
               </div>
               <div className="col-md-6">
-                <Form.Item name="satuan" label="Satuan Product">
-                  <Input defaultValue={dataEdit.satuan} />
+                <Form.Item label="Satuan Product">
+                  <Input value={satuan} onChange={e => this.onChangeInput(e)} />
                 </Form.Item>
               </div>
             </div>
@@ -94,7 +135,7 @@ class EditProduct extends React.Component {
                     htmlType="submit"
                     loading={loadingSave}
                   >
-                    Save
+                    Save Editing
                   </Button>
                 </Form.Item>
               </div>

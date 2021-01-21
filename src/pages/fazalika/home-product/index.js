@@ -44,7 +44,7 @@ class DataProduct extends React.Component {
             shape="circle"
             icon={<EditOutlined />}
             size="small"
-            onClick={() => this.routeChangeEdit(record)}
+            onClick={() => this.routeChangeEdit(record.kode_product)}
           />
         </Space>
       ),
@@ -115,11 +115,11 @@ class DataProduct extends React.Component {
     history.push(path)
   }
 
-  routeChangeEdit = record => {
-    const path = `/product/edit/${record.kode_product}`
-    history.push(path)
-    console.log(JSON.stringify(record))
-    localStorage.setItem('dataRecord', JSON.stringify(record))
+  routeChangeEdit = productCode => {
+    const path = '/product/edit'
+    history.push({ pathname: path, state: { data: productCode } })
+    // console.log(JSON.stringify(record))
+    // localStorage.setItem('dataRecord', JSON.stringify(record))
   }
 
   render() {
