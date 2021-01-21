@@ -35,9 +35,9 @@ export default async function getMenuData() {
       key: 'dataProductFaza',
       children: [
         {
-          title: 'Input Product',
-          key: 'inputProduct',
-          url: '/input-product-faza',
+          title: 'Home',
+          key: 'home',
+          url: '/home-faza',
         },
         {
           title: 'Reporting Product',

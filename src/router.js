@@ -27,11 +27,25 @@ const routes = [
     exact: true,
   },
 
+  // Home
+  {
+    path: '/home-faza',
+    Component: lazy(() => import('pages/fazalika/home-product')),
+    exact: true,
+  },
+
   // Input Product
   {
-    path: '/input-product-faza',
+    path: '/product/new',
     Component: lazy(() => import('pages/fazalika/input-product')),
     exact: true,
+  },
+
+  // Edit Product
+  {
+    path: '/product/edit/',
+    Component: lazy(() => import('pages/fazalika/edit-product')),
+    exact: false,
   },
 
   // Reporting Product
@@ -69,7 +83,7 @@ const routes = [
     Component: lazy(() => import('pages/adit/reporting-produk')),
     exact: true,
   },
-  
+
   // Auth Pages
   {
     path: '/auth/login',

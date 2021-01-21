@@ -5,7 +5,8 @@ import * as product from 'services/product'
 import { history } from 'index'
 
 const { Option } = Select
-class NewProduct extends React.Component {
+
+class EditProduct extends React.Component {
   state = {
     data: [],
     loading: true,
@@ -48,20 +49,21 @@ class NewProduct extends React.Component {
   }
 
   render() {
+    const dataEdit = JSON.parse(localStorage.getItem('dataRecord'))
     const { data, loading, loadingSave } = this.state
     return (
       <div>
-        <Card title="New Product" size="small" loading={loading}>
+        <Card title={<h2>Edit Data {dataEdit.kode_product}</h2>} size="small" loading={loading}>
           <Form layout="vertical" onFinish={this.onFinish} onFinishFailed={this.onFinishFailed}>
             <div className="row">
               <div className="col-md-6">
                 <Form.Item name="nama_product" label="Nama Product">
-                  <Input placeholder="Nama Product" />
+                  <Input defaultValue={dataEdit.nama_product} />
                 </Form.Item>
               </div>
               <div className="col-md-6">
                 <Form.Item name="kode_kategori" label="Nama Kategori">
-                  <Select placeholder="Select a option and change input text above">
+                  <Select defaultValue={dataEdit.kode_kategori}>
                     {data.map(k => (
                       <Option key={k.kode_kategori} value={k.kode_kategori}>
                         {k.kategori}
@@ -74,12 +76,12 @@ class NewProduct extends React.Component {
             <div className="row">
               <div className="col-md-6">
                 <Form.Item name="harga" label="Harga">
-                  <Input placeholder="Harga" />
+                  <Input defaultValue={dataEdit.harga} />
                 </Form.Item>
               </div>
               <div className="col-md-6">
                 <Form.Item name="satuan" label="Satuan Product">
-                  <Input placeholder="Satuan Product" />
+                  <Input defaultValue={dataEdit.satuan} />
                 </Form.Item>
               </div>
             </div>
@@ -104,4 +106,4 @@ class NewProduct extends React.Component {
   }
 }
 
-export default NewProduct
+export default EditProduct
