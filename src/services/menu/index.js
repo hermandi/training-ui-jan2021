@@ -14,7 +14,7 @@ export default async function getMenuData() {
         {
           title: 'Data Product',
           key: 'dataProduct',
-          url: '/data-product',
+          url: '/product/data',
         },
       ],
     },

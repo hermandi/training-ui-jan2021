@@ -14,6 +14,22 @@ const routes = [
     exact: true,
   },
 
+  {
+    path: '/product/data',
+    Component: lazy(() => import('pages/product/home-product')),
+    exact: true,
+  },
+  {
+    path: '/product/new',
+    Component: lazy(() => import('pages/product/input-product')),
+    exact: true,
+  },
+  {
+    path: '/product/edit/:kode',
+    Component: lazy(() => import('pages/product/edit-product')),
+    exact: true,
+  },
+
   // Produk Reya
   {
     path: '/reya/inputProduk',
@@ -69,7 +85,7 @@ const routes = [
     Component: lazy(() => import('pages/adit/reporting-produk')),
     exact: true,
   },
-  
+
   // Auth Pages
   {
     path: '/auth/login',
