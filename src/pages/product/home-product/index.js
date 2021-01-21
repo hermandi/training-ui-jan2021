@@ -61,19 +61,13 @@ class DataProduct extends Component {
     },
   ]
 
-  constructor(props) {
-    super(props)
-    console.log(this.props)
-  }
-
   componentDidMount() {
-    console.log(history)
     const { pagination } = this.state
     this.fetch({ pagination })
   }
 
   edit = kodeProduct => {
-    const path = `/product/edit/${kodeProduct}`
+    const path = '/product/edit'
     history.push({ pathname: path, state: { kodeProduct } })
   }
 
@@ -111,7 +105,6 @@ class DataProduct extends Component {
   }
 
   onFinish = values => {
-    console.log(this.props)
     this.setState({ namaProduct: values.nama_product, pagination: { current: 1, pageSize: 5 } })
     const { pagination } = this.state
     this.fetch({ pagination })

@@ -25,7 +25,7 @@ const routes = [
     exact: true,
   },
   {
-    path: '/product/edit/:kode',
+    path: '/product/edit',
     Component: lazy(() => import('pages/product/edit-product')),
     exact: true,
   },
