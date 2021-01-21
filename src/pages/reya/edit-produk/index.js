@@ -10,7 +10,7 @@ class EditProduk extends React.Component {
   state = {
     kodeProduk: '',
     namaProduk: '',
-    namaKategori: '',
+    kodeKategori: '',
     harga: '',
     satuan: '',
     data: [],
@@ -19,24 +19,33 @@ class EditProduk extends React.Component {
   }
 
   componentDidMount() {
-    const {
-      location: { produkData },
-    } = this.props
-    if (typeof produkData !== 'undefined') {
-      const produkEdit = Object.keys(produkData).map(k => produkData[k])
-      this.setState({
-        kodeProduk: produkEdit[0],
-        namaProduk: produkEdit[1],
-        namaKategori: produkEdit[2],
-        harga: produkEdit[3],
-        satuan: produkEdit[4],
-      })
+    console.log(history)
+    this.setState(
+      {
+        loading: true,
+        kodeProduk: history.location.state.kodeProduct,
+      },
+      () => this.fetchProduk(),
+    )
 
-      this.fetchKategori()
-    } else {
-      const path = '/reya/home-produk'
-      history.push(path)
-    }
+    this.fetchKategori()
+  }
+
+  fetchProduk = () => {
+    this.setState({ loading: true })
+    const { kodeProduk } = this.state
+    product.doGetProduct(kodeProduk).then(data => {
+      console.log(data)
+      if (data.response_code === '00') {
+        this.setState({
+          kodeKategori: data.product.kode_kategori,
+          namaProduk: data.product.nama_product,
+          harga: data.product.harga,
+          satuan: data.product.satuan,
+          loading: false,
+        })
+      }
+    })
   }
 
   fetchKategori = () => {
@@ -75,7 +84,7 @@ class EditProduk extends React.Component {
     const {
       kodeProduk,
       namaProduk,
-      namaKategori,
+      kodeKategori,
       harga,
       satuan,
       data,
@@ -84,6 +93,7 @@ class EditProduk extends React.Component {
     } = this.state
     const title = 'Edit Produk - '
     const titleKode = title.concat(kodeProduk)
+
     return (
       <div>
         <Card title={titleKode} size="small" loading={loading}>
@@ -95,7 +105,7 @@ class EditProduk extends React.Component {
                 </Form.Item>
               </div>
               <div className="col-md-6">
-                <Form.Item name="kode_kategori" label="Nama Kategori" initialValue={namaKategori}>
+                <Form.Item name="kode_kategori" label="Nama Kategori" initialValue={kodeKategori}>
                   <Select placeholder="Select a option and change input text above">
                     {data.map(k => (
                       <Option key={k.kode_kategori} value={k.kode_kategori}>

@@ -4,12 +4,12 @@ import * as product from 'services/product'
 import { EditOutlined } from '@ant-design/icons'
 import { history } from 'index'
 
-function routeEditData(vals) {
+function routeEditData(kodeProduct) {
   const path = '/reya/edit-produk/'
-  const pathDynamic = path.concat(vals.kode_product)
+  const pathDynamic = path.concat(kodeProduct)
   history.push({
     pathname: pathDynamic,
-    produkData: vals,
+    state: { kodeProduct },
   })
 }
 
@@ -53,7 +53,7 @@ const columns = [
           shape="square"
           icon={<EditOutlined />}
           size="small"
-          onClick={() => routeEditData(record)}
+          onClick={() => routeEditData(record.kode_product)}
         >
           {record.kode_product}
         </Button>

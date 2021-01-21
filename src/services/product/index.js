@@ -33,3 +33,15 @@ export async function doSaveProduct(dataProduk) {
     })
     .catch(err => console.log(err))
 }
+
+export async function doGetProduct(kodeProduct) {
+  return apiClientApp
+    .get('/product/get-product', { params: { kode_product: kodeProduct } })
+    .then(response => {
+      if (response) {
+        return response.data
+      }
+      return false
+    })
+    .catch(err => console.log(err))
+}

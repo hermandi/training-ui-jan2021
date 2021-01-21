@@ -6,10 +6,36 @@ import { history } from 'index'
 // Untuk Table
 const columns = [
   {
+    title: 'ID Pelanggan',
+    dataIndex: 'customerId',
+    key: 'customerId',
+    sorter: true,
+    width: '15%',
+  },
+  {
     title: 'Nama Pelanggan',
     dataIndex: 'customerName',
     key: 'customerName',
     sorter: true,
+    width: '15%',
+  },
+  {
+    title: 'Jenis Kelamin',
+    dataIndex: 'jenisKelamin',
+    key: 'jenisKelamin',
+    sorter: true,
+    width: '15%',
+  },
+  {
+    title: 'No KTP',
+    dataIndex: 'noKtp',
+    key: 'noKtp',
+    width: '15%',
+  },
+  {
+    title: 'Jenis Usaha',
+    dataIndex: 'jenisUsaha',
+    key: 'jenisUsaha',
     width: '15%',
   },
 ]
@@ -17,11 +43,6 @@ const columns = [
 class DataCustomer extends React.Component {
   state = {
     data: [],
-    pagination: {
-      current: 1,
-      pageSize: 10,
-    },
-    loading: false,
   }
 
   componentDidMount() {
@@ -29,27 +50,11 @@ class DataCustomer extends React.Component {
     this.fetch({})
   }
 
-  handleTableChange = (pagination, filters, sorter) => {
-    console.log(sorter)
-    this.fetch({
-      sortField: sorter.columnKey,
-      sortOrder: sorter.order,
-      pagination,
-      ...filters,
-    })
-  }
-
-  fetch = (params = {}) => {
-    this.setState({ loading: true })
+  fetch = () => {
     transaksi.doGetTransaksi().then(data => {
       console.log(data)
       this.setState({
-        loading: false,
-        // data: data.responseData,
-        pagination: {
-          ...params.pagination,
-          // total: data.total_records,
-        },
+        data: data.responseData,
       })
     })
   }
@@ -68,17 +73,14 @@ class DataCustomer extends React.Component {
   }
 
   render() {
-    const { data, pagination, loading } = this.state
+    const { data } = this.state
     return (
       <div>
-        <Card title="Search" size="small">
+        <Card title="Pelanggan" size="small">
           <Table
             columns={columns}
-            rowKey={record => record.kode_product}
+            rowKey={record => record.customerId}
             dataSource={data}
-            pagination={pagination}
-            loading={loading}
-            onChange={this.handleTableChange}
             size="small"
           />
         </Card>
