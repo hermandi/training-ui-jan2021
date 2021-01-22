@@ -44,7 +44,7 @@ const routes = [
   // Edit Product
   {
     path: '/product/edit',
-    Component: lazy(() => import('pages/fazalika/edit-product')),
+    Component: lazy(() => import('pages/fazalika/edit-product-v2')),
     exact: false,
   },
 

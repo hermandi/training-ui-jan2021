@@ -48,14 +48,14 @@ export async function doGetProduct(product) {
     .catch(err => console.log(err))
 }
 
-export async function doSaveEdit(product) {
+export async function doSaveEdit(product, code) {
   return apiClientApp
     .post('/product/edit', {
       nama_product: product.nama_product,
       kode_kategori: product.kode_kategori,
       satuan: product.satuan,
       harga: product.harga,
-      kode_product: product.kode_product,
+      kode_product: code,
     })
     .then(response => {
       if (response) {
