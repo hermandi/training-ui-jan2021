@@ -60,16 +60,31 @@ const routes = [
   },
   // Adit
   {
-    path: '/adit/data-produk',
-    Component: lazy(() => import('pages/adit/data-produk')),
+    path: '/adit/home-product',
+    Component: lazy(() => import('pages/adit/home-product')),
     exact: true,
   },
   {
-    path: '/adit/reporting-produk',
-    Component: lazy(() => import('pages/adit/reporting-produk')),
+    path: '/adit/home-product-test',
+    Component: lazy(() => import('pages/adit/home-product-test')),
     exact: true,
   },
-  
+  {
+    path: '/adit/input-product',
+    Component: lazy(() => import('pages/adit/input-product')),
+    exact: true,
+  },
+  {
+    path: '/adit/edit-product/:id',
+    Component: lazy(() => import('pages/adit/edit-product')),
+    exact: true,
+  },
+  {
+    path: '/adit/reporting-product',
+    Component: lazy(() => import('pages/adit/reporting-product')),
+    exact: true,
+  },
+
   // Auth Pages
   {
     path: '/auth/login',

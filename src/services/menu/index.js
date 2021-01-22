@@ -14,7 +14,7 @@ export default async function getMenuData() {
         {
           title: 'Data Product',
           key: 'dataProduct',
-          url: '/data-product',
+          url: '/product',
         },
       ],
     },
@@ -47,18 +47,28 @@ export default async function getMenuData() {
       ],
     },
     {
-      title: 'Data Produk Adit',
-      key: 'dataProdukAdit',
+      title: 'Data Product Adit',
+      key: 'dataProductAdit',
       children: [
         {
-          title: 'Input Product',
-          key: 'inputProduct',
-          url: '/adit/data-produk',
+          title: 'Data Product',
+          key: 'dataProductAdit',
+          url: '/adit/home-product',
         },
         {
-          title: 'Reporting Produk',
-          key: 'reportingProduk',
-          url: '/adit/reporting-produk',
+          title: 'Data Product Test',
+          key: 'dataProductTestAdit',
+          url: '/adit/home-product-test',
+        },
+        {
+          title: 'Input Product',
+          key: 'inputProductAdit',
+          url: '/adit/input-product',
+        },
+        {
+          title: 'Reporting Product',
+          key: 'reportingProductAdit',
+          url: '/adit/reporting-product',
         },
       ],
     },
