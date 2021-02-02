@@ -51,7 +51,7 @@ class DataCustomer extends React.Component {
   }
 
   fetch = () => {
-    transaksi.doGetTransaksi().then(data => {
+    transaksi.doGetCustomer().then(data => {
       console.log(data)
       this.setState({
         data: data.responseData,

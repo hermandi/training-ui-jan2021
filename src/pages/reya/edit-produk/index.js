@@ -61,8 +61,7 @@ class EditProduk extends React.Component {
       console.log(data)
       this.setState({ loadingSave: false })
       if (data.response_code === '00') {
-        const path = '/reya/home-produk'
-        history.push(path)
+        history.goBack()
         notification.success({
           message: 'Simpan Produk berhasil!',
           description: 'Sudah berhasil meyimpan produk baru!',
@@ -96,16 +95,29 @@ class EditProduk extends React.Component {
   }
 
   confirmPop = () => {
-    notification.success({
-      message: 'Berhasil menghapus produk!',
-      description: 'Produk sudah berhasil dihapus!',
+    const { kodeProduct } = this.state
+    console.log(kodeProduct)
+    product.doDeleteProduct(kodeProduct).then(data => {
+      this.setState({ loadingSave: false })
+      if (data.response_code === '00') {
+        history.goBack()
+        notification.success({
+          message: 'Hapus Produk berhasil!',
+          description: 'Sudah berhasil menghapus produk baru!',
+        })
+      } else {
+        notification.error({
+          message: 'Hapus Produk gagal!',
+          description: data.response_desc,
+        })
+      }
     })
   }
 
   cancelPop = () => {
     notification.error({
-      message: 'Tidak menghapus data!',
-      description: 'Produk dipilih tidak dihapus!',
+      message: 'Batal menghapus data!',
+      description: 'Produk batal dihapus!',
     })
   }
 

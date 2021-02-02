@@ -125,6 +125,26 @@ const routes = [
     Component: lazy(() => import('pages/auth/500')),
     exact: true,
   },
+  {
+    path: '/reya/transaksi/transaksi-cicilan',
+    Component: lazy(() => import('pages/reya/transaksi/home-transaksi-cicilan')),
+    exact: true,
+  },
+  {
+    path: '/reya/transaksi/transaksi-cicilan-input',
+    Component: lazy(() => import('pages/reya/transaksi/input-transaksi-cicilan')),
+    exact: true,
+  },
+  {
+    path: '/reya/transaksi/transaksi-cicilan-detail',
+    Component: lazy(() => import('pages/reya/transaksi/detail-transaksi-cicilan')),
+    exact: true,
+  },
+  {
+    path: '/reya/transaksi/transaksi-cicilan-pembayaran',
+    Component: lazy(() => import('pages/reya/transaksi/pembayaran-transaksi-cicilan')),
+    exact: true,
+  },
 ]
 
 const mapStateToProps = ({ settings }) => ({

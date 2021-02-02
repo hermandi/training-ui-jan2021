@@ -70,6 +70,18 @@ export default async function getMenuData() {
         },
       ],
     },
+    {
+      title: 'Transaksi',
+      key: 'transaksi',
+      icon: 'fe fe-gear',
+      children: [
+        {
+          title: 'Transaksi Cicilan',
+          key: 'transaksiCicilan',
+          url: '/reya/transaksi/transaksi-cicilan',
+        },
+      ],
+    },
   ]
 }
 
