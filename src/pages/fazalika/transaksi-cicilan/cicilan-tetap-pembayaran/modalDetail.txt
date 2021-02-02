@@ -1,0 +1,170 @@
+fetchDetailPopUp = (noTransaksi) =>{
+    const loadParameter = {}
+    loadParameter.noTransaksi = noTransaksi
+    trx.doGetDetailTrx(loadParameter).then(data=>{
+      this.formRefModal.current.setFieldsValue({
+        noTransaksi: data[0].noTransaksi,
+        customerId: data[0].customerId,
+        tglTransaksi: data[0].tglTransaksi,
+        produkId: data[0].productId,
+        noKtp: data[0].noKtp,
+        customerName: data[0].customerName,
+        produkName: data[0].produkName,
+        ltv: data[0].ltv,
+        jangkaWaktu: data[0].jangkaWaktu,
+        tipeAdminBuka: data[0].tipeAdminBuka,
+        biayaAdminBuka: data[0].biayaAdminBuka,
+        tipeAdminTutup: data[0].tipeAdminTutup,
+        biayaAdminTutup: data[0].biayaAdminTutup,
+        biayaJasaPenyimpanan: data[0].biayaJasaPenyimpanan,
+        biayaJasaPenyimpananPeriode: data[0].biayaJasaPenyimpananPeriode,
+        periodeJasaPenyimpanan: data[0].periodeJasaPenyimpanan,
+        biayaKeterlambatan: data[0].biayaKeterlambatan,
+        periodeBiayaKeterlambatan: data[0].periodeBiayaKeterlambatan,
+        totalNilaiTaksiran: data[0].totalNilaiTaksiran,
+        maksPinjaman: data[0].maksPinjaman,
+        nilaiPencairan: data[0].nilaiPencairan,
+        discBiayaAdm: data[0].discBiayaAdm,
+        biayaAdmAkhir: data[0].biayaAdmAkhir,
+        totalPinjaman: data[0].totalPinjaman,
+        tglJatuhTempo: data[0].tglJatuhTempo,
+        discBiayaJp: data[0].discBiayaJp,
+        totalBiayaJp: data[0].totalBiayaJp,
+        totalPengembalian: data[0].totalPengembalian,
+        statusTransaksi: data[0].statusTransaksi,
+        createdBy: data[0].createdBy,
+        createdDate: data[0].createdDate,
+        updatedBy: data[0].updatedBy,
+        updatedDate: data[0].updatedDate,
+        deletedBy: data[0].deletedBy,
+        deletedDate: data[0].deletedDate,
+      })
+    })
+  }
+
+modalDetail = () =>{
+    const { noTransaksi } = this.state
+    this.fetchDetailPopUp(noTransaksi)
+    Modal.info({
+      title: 'Detail Transaksi',
+      width:1000,
+      content: (
+        <div>
+          <Form layout="vertical" ref={this.formRefModal}>
+            <div className="row">
+              <div className="col-md-6">
+                <Form.Item name="noTransaksi" label="Nomor Transaksi">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="customerId" label="ID Pelanggan">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="tglTransaksi" label="Tanggal Transaksi">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="produkId" label="ID Produk">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="noKtp" label="Nomor KTP">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="customerName" label="Nama Pelanggan">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="produkName" label="Nama Produk">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="ltv" label="LTV">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="jangkaWaktu" label="Jangka Waktu">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="tipeAdminBuka" label="Tipe Admin Buka">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="biayaAdminBuka" label="Biaya Admin Buka">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="tipeAdminTutup" label="Tipe Admin Tutup">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="biayaAdminTutup" label="Biaya Admin Tutup">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="biayaJasaPenyimpanan" label="Biaya Jasa Penyimpanan">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="biayaJasaPenyimpananPeriode" label="Biaya Jasa Penyimpanan Periode">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="periodeJasaPenyimpanan" label="Periode Jasa Penyimpanan">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="biayaKeterlambatan" label="Biaya Keterlambatan">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="periodeBiayaKeterlambatan" label="Periode Biaya Keterlambatan">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+              </div>
+              <div className="col-md-6">
+                <Form.Item name="totalNilaiTaksiran" label="Total Nilai Taksiran">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="maksPinjaman" label="Maksimal Pinjaman">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="nilaiPencairan" label="Nilai Pencairan">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="discBiayaAdm" label="Diskon Biaya Admin">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="biayaAdmAkhir" label="Biaya Admin Akhir">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="totalPinjaman" label="Total Pinjaman">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="tglJatuhTempo" label="Tanggal Jatuh Tempo">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="discBiayaJp" label="Diskon Biaya Jasa Penyimpanan">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="totalBiayaJp" label="Total Biaya Jasa Penyimpanan">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="totalPengembalian" label="Total Pengembalian">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="statusTransaksi" label="Status Transaksi">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="createdDate" label="Created Date">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="createdBy" label="Created By">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="updatedDate" label="Updated Date">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="updatedBy" label="Updated By">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="deletedDate" label="Deleted Date">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+                <Form.Item name="deletedBy" label="Deleted By">
+                  <Input disabled style={{ width: 250 }} />
+                </Form.Item>
+              </div>
+            </div>
+          </Form>
+        </div>
+      ),
+      onOk() {},
+    });
+  }

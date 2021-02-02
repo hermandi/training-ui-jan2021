@@ -14,19 +14,6 @@ const routes = [
     exact: true,
   },
 
-  // Produk Reya
-  {
-    path: '/reya/inputProduk',
-    Component: lazy(() => import('pages/reya/input-produk')),
-    exact: true,
-  },
-
-  {
-    path: '/reya/reportingProduk',
-    Component: lazy(() => import('pages/reya/reporting-produk')),
-    exact: true,
-  },
-
   // Home
   {
     path: '/home-faza',
@@ -55,6 +42,34 @@ const routes = [
     exact: true,
   },
 
+  // Transaksi Cicilan Tetap
+  {
+    path: '/cicilan-tetap',
+    Component: lazy(() => import('pages/fazalika/transaksi-cicilan/cicilan-tetap')),
+    exact: true,
+  },
+
+  // Transaksi Cicilan Tetap Baru
+  {
+    path: '/cicilan-tetap/new',
+    Component: lazy(() => import('pages/fazalika/transaksi-cicilan/cicilan-tetap-baru')),
+    exact: true,
+  },
+
+  // Transaksi Cicilan Tetap Detail
+  {
+    path: '/cicilan-tetap/detail',
+    Component: lazy(() => import('pages/fazalika/transaksi-cicilan/cicilan-tetap-detail')),
+    exact: true,
+  },
+
+  // Transaksi Cicilan Tetap Pembayaran
+  {
+    path: '/cicilan-tetap/pembayaran',
+    Component: lazy(() => import('pages/fazalika/transaksi-cicilan/cicilan-tetap-pembayaran')),
+    exact: true,
+  },
+
   // Gadai
   {
     path: '/gadai/data',
@@ -70,17 +85,6 @@ const routes = [
   {
     path: '/report/gadai',
     Component: lazy(() => import('pages/report/report-gadai')),
-    exact: true,
-  },
-  // Adit
-  {
-    path: '/adit/data-produk',
-    Component: lazy(() => import('pages/adit/data-produk')),
-    exact: true,
-  },
-  {
-    path: '/adit/reporting-produk',
-    Component: lazy(() => import('pages/adit/reporting-produk')),
     exact: true,
   },
 

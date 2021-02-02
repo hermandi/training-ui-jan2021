@@ -83,8 +83,22 @@ class EditProduct extends Component {
   }
 
   delete = () => {
-    this.setState({
-      visibleModal: true,
+    const { kodeProduct } = this.state
+    serviceProduct.doDelete(kodeProduct).then(data => {
+      console.log(data)
+      this.setState({ loadingSave: false })
+      if (data.response_code === '00') {
+        history.goBack()
+        notification.success({
+          message: 'Success',
+          description: 'Data successfully deleted!',
+        })
+      } else {
+        notification.error({
+          message: 'Error',
+          description: 'Something went wrong',
+        })
+      }
     })
   }
 

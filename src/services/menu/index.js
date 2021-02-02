@@ -47,35 +47,19 @@ export default async function getMenuData() {
       ],
     },
     {
-      title: 'Data Produk Adit',
-      key: 'dataProdukAdit',
-      children: [
-        {
-          title: 'Input Product',
-          key: 'inputProduct',
-          url: '/adit/data-produk',
-        },
-        {
-          title: 'Reporting Produk',
-          key: 'reportingProduk',
-          url: '/adit/reporting-produk',
-        },
-      ],
-    },
-    {
-      title: 'Produk Reya',
-      key: 'produkReya',
+      title: 'Transaksi Cicilan',
+      key: 'transaksiCicilan',
       icon: 'fe fe-gear',
       children: [
         {
-          title: 'Input Produk',
+          title: 'Cicilan Tetap',
           key: 'inputProduk',
-          url: '/reya/inputProduk',
+          url: '/cicilan-tetap',
         },
         {
-          title: 'Reporting Produk',
+          title: 'Cicilan Fleksibel',
           key: 'reportingProduk',
-          url: '/reya/reportingProduk',
+          url: '/cicilan-fleksibel',
         },
       ],
     },
