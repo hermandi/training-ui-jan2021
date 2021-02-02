@@ -56,11 +56,6 @@ export default async function getMenuData() {
           url: '/adit/home-product',
         },
         {
-          title: 'Data Product Test',
-          key: 'dataProductTestAdit',
-          url: '/adit/home-product-test',
-        },
-        {
           title: 'Input Product',
           key: 'inputProductAdit',
           url: '/adit/input-product',
@@ -71,6 +66,11 @@ export default async function getMenuData() {
           url: '/adit/reporting-product',
         },
       ],
+    },
+    {
+      title: 'Transaksi Cicilan Tetap',
+      key: 'transaksiCicilanTetap',
+      url: '/adit/gadai/transaksi/cicilan-tetap/cari',
     },
     {
       title: 'Produk Reya',

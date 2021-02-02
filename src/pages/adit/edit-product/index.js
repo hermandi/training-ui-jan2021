@@ -13,7 +13,7 @@ class EditProduct extends Component {
     dataKategori: [],
     loadingEdit: false,
     loadingCard: true,
-
+    loadingDelete: false,
     kodeProduct: '',
     namaProduct: '',
     kodeKategori: '',
@@ -110,13 +110,34 @@ class EditProduct extends Component {
   }
 
   deleteProduct = () => {
-    notification.success({
-      message: 'Delete Product Success',
+    const { kodeProduct } = this.state
+    this.setState({ loadingDelete: true })
+    productService.doDeleteProduct(kodeProduct).then(data => {
+      console.log(data)
+      this.setState({ loadingEdit: false })
+      if (data.response_code === '00') {
+        history.push('/adit/home-product')
+        notification.success({
+          message: 'Delete Product Success',
+        })
+      } else {
+        this.setState({ loadingEdit: false })
+        notification.error({
+          message: 'Delete Product Fail',
+        })
+      }
     })
   }
 
   render() {
-    const { dataKategori, loadingCard, loadingEdit, kodeProduct, namaProduct } = this.state
+    const {
+      dataKategori,
+      loadingCard,
+      loadingEdit,
+      loadingDelete,
+      kodeProduct,
+      namaProduct,
+    } = this.state
 
     return (
       <div>
@@ -175,6 +196,7 @@ class EditProduct extends Component {
                   <Button
                     type="primary"
                     className="btn btn-light px-5 mr-2"
+                    loading={loadingDelete}
                     onClick={this.onClickDelete}
                   >
                     Delete

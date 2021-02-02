@@ -3,7 +3,8 @@ import { notification } from 'antd'
 
 // Ubah baseURL sesuai dengan alamat service
 const apiClientApp = axios.create({
-  baseURL: 'https://jnds.herokuapp.com',
+  // baseURL: 'https://jnds.herokuapp.com',
+  baseURL: 'http://localhost:8080',
   // timeout: 1000,
   // headers: { 'X-Custom-Header': 'foobar' }
 })

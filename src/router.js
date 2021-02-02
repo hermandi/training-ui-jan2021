@@ -65,11 +65,6 @@ const routes = [
     exact: true,
   },
   {
-    path: '/adit/home-product-test',
-    Component: lazy(() => import('pages/adit/home-product-test')),
-    exact: true,
-  },
-  {
     path: '/adit/input-product',
     Component: lazy(() => import('pages/adit/input-product')),
     exact: true,
@@ -82,6 +77,26 @@ const routes = [
   {
     path: '/adit/reporting-product',
     Component: lazy(() => import('pages/adit/reporting-product')),
+    exact: true,
+  },
+  {
+    path: '/adit/gadai/transaksi/cicilan-tetap/cari',
+    Component: lazy(() => import('pages/adit/gadai/tx-cic-tetap/cari')),
+    exact: true,
+  },
+  {
+    path: '/adit/gadai/transaksi/cicilan-tetap/baru',
+    Component: lazy(() => import('pages/adit/gadai/tx-cic-tetap/baru')),
+    exact: true,
+  },
+  {
+    path: '/adit/gadai/transaksi/cicilan-tetap/detail',
+    Component: lazy(() => import('pages/adit/gadai/tx-cic-tetap/detail')),
+    exact: true,
+  },
+  {
+    path: '/adit/gadai/transaksi/cicilan-tetap/pembayaran',
+    Component: lazy(() => import('pages/adit/gadai/tx-cic-tetap/pembayaran')),
     exact: true,
   },
 

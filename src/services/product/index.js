@@ -63,3 +63,17 @@ export async function doEditProduct(data) {
     })
     .catch(err => console.log(err))
 }
+
+export async function doDeleteProduct(kodeProduct) {
+  return apiClientApp
+    .post('/product/delete', {
+      kode_product: kodeProduct,
+    })
+    .then(response => {
+      if (response) {
+        return response.data
+      }
+      return false
+    })
+    .catch(err => console.log(err))
+}
